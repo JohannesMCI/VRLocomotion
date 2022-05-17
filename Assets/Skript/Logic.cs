@@ -89,7 +89,7 @@ public partial class Logic : MonoBehaviour
 
                 case StateMachineStudy.ProcessState.Walk:
                     
-                    if (watchWalk.Elapsed.Seconds > WalkTimeMin * 60 && !startingRaiseOnce)
+                    if (watchWalk.Elapsed.TotalSeconds > WalkTimeMin * 60 && !startingRaiseOnce)
                     {
                         GUITips.text = "";
                         ShowEnvironment(false);
