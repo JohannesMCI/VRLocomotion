@@ -122,7 +122,7 @@ public partial class Logic : MonoBehaviour
                         watchFeels.Reset();
                         watchFeels.Start();
                     }
-                    else if (unraise && !pointInProgress && watchFeels.Elapsed.TotalSeconds > 3)
+                    else if (unraise && !pointInProgress && watchFeels.Elapsed.TotalSeconds > 2)
                     {
                         if (UnRaiseMaze())
                         {
