@@ -119,14 +119,16 @@ public partial class Logic : MonoBehaviour
                     if (!pointInProgress && unraise == false)
                     {
                         PointToMazeStart();
+                        watchFeels.Reset();
+                        watchFeels.Start();
                     }
-                    else if (unraise && !pointInProgress)
+                    else if (unraise && !pointInProgress && watchFeels.Elapsed.TotalSeconds > 3)
                     {
                         if (UnRaiseMaze())
                         {
                             unraise = false;
                             activeLandMark = null;
-
+                            watchFeels.Stop();
                             ShowConfidence();
                         }
                     }
